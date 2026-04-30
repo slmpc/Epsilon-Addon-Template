@@ -1,0 +1,40 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+.kotlin
+.eclipse
+run
+runs
+run-data
+
+repo
+
+# local OpenEpsilon jars
+epsilon_libs/*.jar
+!epsilon_libs/README.md
+!epsilon_libs/put_open_epsilon_jars_here.txt
+
+# AI
+.vscode
+.trae
+致敬源码库
+
+# Mac OS
+.DS_Store

@@ -1,0 +1,27 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "license": "${license}",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "com.example.epsilonaddon.template.fabric.EpsilonAddonTemplateFabric"
+        ],
+        "open_epsilon:addon": [
+            "com.example.epsilonaddon.template.fabric.EpsilonAddonTemplateFabricEntrypoint"
+        ]
+    },
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": "*",
+        "minecraft": "~${minecraft_version}",
+        "java": ">=${java_version}",
+        "open_epsilon": ">=${epsilon_version}"
+    }
+}
