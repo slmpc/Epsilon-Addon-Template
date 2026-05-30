@@ -13,7 +13,7 @@
 
 ## Overview
 
-This repository is a **multiloader OpenEpsilon addon template**.
+This repository is a **multiloader Epsilon addon template**.
 
 It keeps shared addon logic in `common`, and loader-specific bootstrap code in `fabric` and `neoforge`.
 
@@ -22,7 +22,7 @@ It keeps shared addon logic in `common`, and loader-specific bootstrap code in `
 - `common` – shared addon class and shared resources
 - `fabric` – Fabric bootstrap + `epsilon:addon` entrypoint
 - `neoforge` – NeoForge bootstrap + addon registration event hook
-- `epsilon_libs` – local OpenEpsilon jars used for development and testing
+- `epsilon_libs` – local Epsilon jars used for development and testing
 
 ## Included Example
 
@@ -34,17 +34,11 @@ The template ships with a minimal addon:
 
 Replace these files with your own addon implementation when starting a new project.
 
-## Local OpenEpsilon Dependencies
+## Local Epsilon Dependencies
 
-Before building, place the built OpenEpsilon jars into `epsilon_libs/`.
+Before building, place the built Epsilon jars into `epsilon_libs/`.
 
-Expected filenames are configured in `gradle.properties`:
-
-- `epsilon_common_jar`
-- `epsilon_fabric_jar`
-- `epsilon_neoforge_jar`
-
-By default they match OpenEpsilon `2026.3.0` for Minecraft `26.1.2`.
+The build script auto-detects jars matching `epsilon-common-*.jar`, `epsilon-fabric-*.jar`, and `epsilon-neoforge-*.jar` (excluding sources jars).
 
 ## Build
 
@@ -61,7 +55,7 @@ By default they match OpenEpsilon `2026.3.0` for Minecraft `26.1.2`.
 
 ## Addon Development Notes
 
-- Fabric registers addons through the custom `open_epsilon:addon` entrypoint.
+- Fabric registers addons through the custom `epsilon:addon` entrypoint.
 - NeoForge registers addons by listening to `com.github.epsilon.neoforge.addon.EpsilonAddonSetupEvent`.
 - Shared addon settings should use lang keys like `{addonId}.settings.{settingName}`.
 

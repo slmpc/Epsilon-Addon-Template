@@ -5,10 +5,12 @@ plugins {
 
 val neoforgeVersion = project.property("neoforge_version").toString()
 val modId = project.property("mod_id").toString()
-val epsilonNeoForgeJar = rootProject.file("epsilon_libs/${project.property("epsilon_neoforge_jar")}")
+val epsilonNeoForgeJar = rootProject.file("epsilon_libs").listFiles()?.firstOrNull {
+    it.name.startsWith("epsilon-neoforge-") && it.name.endsWith(".jar") && !it.name.endsWith("-sources.jar")
+} ?: rootProject.file("epsilon_libs/missing.jar")
 
 check(epsilonNeoForgeJar.exists()) {
-    "Missing OpenEpsilon NeoForge jar: ${epsilonNeoForgeJar.absolutePath}. Copy it into epsilon_libs/ or update epsilon_neoforge_jar in gradle.properties."
+    "Missing OpenEpsilon NeoForge jar in epsilon_libs/. Expected a file matching epsilon-neoforge-*.jar (excluding sources jars)."
 }
 
 neoForge {

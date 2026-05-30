@@ -13,16 +13,16 @@
 
 ## 项目简介
 
-这个仓库现在是一个 **OpenEpsilon 的多加载器 addon 模板**。
+这个仓库现在是一个 **Epsilon 的多加载器 addon 模板**。
 
 它把共享 addon 逻辑放在 `common`，并在 `fabric` 与 `neoforge` 中分别提供对应加载器的引导代码。
 
 ## 目录结构
 
 - `common`：共享 addon 类与共享资源
-- `fabric`：Fabric 启动类与 `open_epsilon:addon` 自定义入口
+- `fabric`：Fabric 启动类与 `epsilon:addon` 自定义入口
 - `neoforge`：NeoForge 启动类与 addon 注册事件监听
-- `epsilon_libs`：本地开发/调试使用的 OpenEpsilon jar
+- `epsilon_libs`：本地开发/调试使用的 Epsilon jar
 
 ## 模板内置示例
 
@@ -34,17 +34,11 @@
 
 开始新项目时，可以直接在这些文件基础上继续改，或者整体替换成你自己的包名和类名。
 
-## 本地 OpenEpsilon 依赖
+## 本地 Epsilon 依赖
 
-构建前，需要先把 OpenEpsilon 构建产物放到 `epsilon_libs/` 目录下。
+构建前，需要先把 Epsilon 构建产物放到 `epsilon_libs/` 目录下。
 
-默认文件名在 `gradle.properties` 中配置：
-
-- `epsilon_common_jar`
-- `epsilon_fabric_jar`
-- `epsilon_neoforge_jar`
-
-当前默认对应 Minecraft `26.1.2` / OpenEpsilon `2026.3.0`。
+构建脚本会自动识别匹配 `epsilon-common-*.jar`、`epsilon-fabric-*.jar`、`epsilon-neoforge-*.jar` 的 jar 文件（排除 sources jar）。
 
 ## 构建
 
@@ -61,7 +55,7 @@
 
 ## Addon 开发说明
 
-- Fabric 通过自定义入口 `open_epsilon:addon` 注册 addon。
+- Fabric 通过自定义入口 `epsilon:addon` 注册 addon。
 - NeoForge 通过监听 `com.github.epsilon.neoforge.addon.EpsilonAddonSetupEvent` 注册 addon。
 - 共享 addon setting 的翻译 key 建议使用 `{addonId}.settings.{settingName}`。
 

@@ -6,10 +6,12 @@ plugins {
 val minecraftVersion = project.property("minecraft_version").toString()
 val fabricLoaderVersion = project.property("fabric_loader_version").toString()
 val fabricVersion = project.property("fabric_version").toString()
-val epsilonFabricJar = rootProject.file("epsilon_libs/${project.property("epsilon_fabric_jar")}")
+val epsilonFabricJar = rootProject.file("epsilon_libs").listFiles()?.firstOrNull {
+    it.name.startsWith("epsilon-fabric-") && it.name.endsWith(".jar") && !it.name.endsWith("-sources.jar")
+} ?: rootProject.file("epsilon_libs/missing.jar")
 
 check(epsilonFabricJar.exists()) {
-    "Missing OpenEpsilon Fabric jar: ${epsilonFabricJar.absolutePath}. Copy it into epsilon_libs/ or update epsilon_fabric_jar in gradle.properties."
+    "Missing OpenEpsilon Fabric jar in epsilon_libs/. Expected a file matching epsilon-fabric-*.jar (excluding sources jars)."
 }
 
 dependencies {

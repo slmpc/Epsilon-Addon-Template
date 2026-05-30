@@ -3,10 +3,12 @@ plugins {
     id("net.neoforged.moddev")
 }
 
-val epsilonCommonJar = rootProject.file("epsilon_libs/${project.property("epsilon_common_jar")}")
+val epsilonCommonJar = rootProject.file("epsilon_libs").listFiles()?.firstOrNull {
+    it.name.startsWith("epsilon-common-") && it.name.endsWith(".jar") && !it.name.endsWith("-sources.jar")
+} ?: rootProject.file("epsilon_libs/missing.jar")
 
 check(epsilonCommonJar.exists()) {
-    "Missing Epsilon common jar: ${epsilonCommonJar.absolutePath}. Copy it into epsilon_libs/ or update epsilon_common_jar in gradle.properties."
+    "Missing Epsilon common jar in epsilon_libs/. Expected a file matching epsilon-common-*.jar (excluding sources jars)."
 }
 
 neoForge {
