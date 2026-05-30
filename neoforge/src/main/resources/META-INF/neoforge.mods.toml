@@ -24,7 +24,7 @@ ordering = "NONE"
 side = "CLIENT"
 
 [[dependencies.${mod_id}]]
-modId = "open_epsilon"
+modId = "epsilon"
 type = "required"
 versionRange = "[${epsilon_version},)"
 ordering = "AFTER"

@@ -6,7 +6,7 @@ plugins {
 val epsilonCommonJar = rootProject.file("epsilon_libs/${project.property("epsilon_common_jar")}")
 
 check(epsilonCommonJar.exists()) {
-    "Missing OpenEpsilon common jar: ${epsilonCommonJar.absolutePath}. Copy it into epsilon_libs/ or update epsilon_common_jar in gradle.properties."
+    "Missing Epsilon common jar: ${epsilonCommonJar.absolutePath}. Copy it into epsilon_libs/ or update epsilon_common_jar in gradle.properties."
 }
 
 neoForge {

@@ -13,7 +13,7 @@
         "client": [
             "com.example.epsilonaddon.template.fabric.EpsilonAddonTemplateFabric"
         ],
-        "open_epsilon:addon": [
+        "epsilon:addon": [
             "com.example.epsilonaddon.template.fabric.EpsilonAddonTemplateFabricEntrypoint"
         ]
     },
@@ -22,6 +22,6 @@
         "fabric-api": "*",
         "minecraft": "~${minecraft_version}",
         "java": ">=${java_version}",
-        "open_epsilon": ">=${epsilon_version}"
+        "epsilon": ">=${epsilon_version}"
     }
 }

@@ -20,7 +20,7 @@ It keeps shared addon logic in `common`, and loader-specific bootstrap code in `
 ## Project Layout
 
 - `common` – shared addon class and shared resources
-- `fabric` – Fabric bootstrap + `open_epsilon:addon` entrypoint
+- `fabric` – Fabric bootstrap + `epsilon:addon` entrypoint
 - `neoforge` – NeoForge bootstrap + addon registration event hook
 - `epsilon_libs` – local OpenEpsilon jars used for development and testing
 
