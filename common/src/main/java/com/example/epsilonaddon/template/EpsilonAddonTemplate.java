@@ -40,7 +40,7 @@ public final class EpsilonAddonTemplate extends EpsilonAddon {
 
     @Override
     public String getDescription() {
-        return "A minimal multiloader addon template for OpenEpsilon.";
+        return "A minimal multiloader addon template for Epsilon.";
     }
 
     @Override
