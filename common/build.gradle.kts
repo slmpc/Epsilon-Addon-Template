@@ -17,6 +17,12 @@ neoForge {
 
 dependencies {
     compileOnly(files(epsilonCommonJar))
+
+    compileOnly(group = "org.spongepowered", name = "mixin", version = "0.8.5")
+    compileOnly(group = "io.github.llamalad7", name = "mixinextras-common", version = "0.5.3")
+    annotationProcessor(group = "io.github.llamalad7", name = "mixinextras-common", version = "0.5.3")
+    compileOnly(group = "org.ow2.asm", name = "asm", version = "9.8")
+    compileOnly(group = "com.google.code.findbugs", name = "jsr305", version = "3.0.2")
 }
 
 configurations {

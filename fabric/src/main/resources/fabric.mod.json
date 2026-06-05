@@ -9,6 +9,10 @@
     ],
     "license": "${license}",
     "environment": "client",
+    "mixins": [
+        "epsilon_addon_template.mixins.json"
+    ],
+    "accessWidener": "epsilon_addon_template.accesswidener",
     "entrypoints": {
         "client": [
             "com.example.epsilonaddon.template.fabric.EpsilonAddonTemplateFabric"
