@@ -13,6 +13,10 @@ check(epsilonCommonJar.exists()) {
 
 neoForge {
     neoFormVersion = project.property("neo_form_version").toString()
+    val at = file("src/main/resources/META-INF/accesstransformer.cfg")
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
 }
 
 dependencies {
